@@ -56,6 +56,11 @@ return "User successfully registered.";
 
 // Method to verify login details
 public boolean loginUser(String username, String password) {
+// Return false if no user has been registered yet
+if (this.username == null || this.password == null) {
+return false;
+}
+
 // Check if entered details match stored details
 return this.username.equals(username) && this.password.equals(password);
 }
